@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="A really cool site!">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='img/coding_dojo_logo.png') }}" class="mr-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="album py-5 bg-light">
+        <div class="container justify-content-sm-center black-border mt-5">
+            <div class="row justify-content-center">
+                <div class="col mt-5">
+                    <h1 class="mb-4">Submitted Info</h1>
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-4">
+                    <h5>Name:</h5>
+                </div>
+                <div class="col-3 h5">
+                    <span class="text-primary">{{ temp_name }}</span>
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-4">
+                    <h5>Dojo Location:</h5>
+                </div>
+                <div class="col-4 h5">
+                    <span class="text-primary">{{ temp_location }}</span>
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-4">
+                    <h5>Favorite Language:</h5>
+                </div>
+                <div class="col-4 h5">
+                    <span class="text-primary">{{ temp_language }}</span>
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-4">
+                    <h5>Favorite Framework:</h5>
+                </div>
+                <div class="col-4 h5">
+                    {% for item in temp_framework %}
+                    <span class="text-primary">{{ item }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-7 h5">
+                    <h5>Going to devote <span class="text-primary">{{ temp_hours }}</span> hours a week</h5>
+                </div>
+            </div>
+            <div class="row justify-content-md-start mb-3">
+                <div class="col-4">
+                    <h5>Comment:</h5>
+                </div>
+                <div class="col-4 h5">
+                    <span class="text-primary">{{ temp_comment }}</span>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-auto">
+                    <button type="button" value="Go Back" class="btn btn-primary btn-lg"
+                        onclick="history.back()">Back</button>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>

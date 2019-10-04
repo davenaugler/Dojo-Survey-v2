@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="A really cool site!">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='img/coding_dojo_logo.png') }}" class="mr-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center black-border mt-5">
+                <div class="col-7 mt-5">
+                    <form action="/users" method="post">
+                        <div class="text-center">
+                            <h1 class="mb-5">Pre-Bootcamp Form</h1>
+                        </div>
+                        <div class="row justify-content-start mb-2">
+                            <div class="col-4">
+                                <h5>Your Name:</h5>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="name" class="border rounded border-dark" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mb-3">
+                            <div class="col-4">
+                                <h5>Dojo Location:</h5>
+                            </div>
+                            <div class="col-6 h6">
+                                <select name="location" id="" class="border rounded border-dark">
+                                    <option name="location" value="Choose Location">Choose Location</option>Î
+                                    <option name="location" value="Arlington, VA">Arlington, VA</option>
+                                    <option name="location" value="Boise, ID">Boise, ID</option>
+                                    <option name="location" value="Chicago, IL">Chicago, IL</option>
+                                    <option name="location" value="Dallas, TX">Dallas, TX</option>
+                                    <option name="location" value="Los Angeles, CA">Los Angeles, CA</option>
+                                    <option name="location" value="Oakland, CA">Oakland, CA</option>
+                                    <option name="location" value="Orange County, CA">Orange County, CA</option>
+                                    <option name="location" value="Sillicon Valley, CA">Silicon Valley, CA</option>
+                                    <option name="location" value="Seattle, WA">Seattle,WA</option>
+                                    <option name="location" value="Tulsa, OK">Tulsa, OK</option>
+                                    <hr>
+                                    <option name="location" value="online">Online</option>
+                                    <option name="location" value="int_students">International Students</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mb-3">
+                            <div class="col-4">
+                                <h5>Favorite Language</h5>
+                            </div>
+                            <div class="col-6 h6">
+                                <select name="language" id="" class="border rounded border-dark">
+                                    <option name="language" value="Choose Language">Choose Language</option>
+                                    <option name="language" value="JavaScript">JavaScript</option>
+                                    <option name="language" value="Python">Python</option>
+                                    <option name="language" value="C#">C#</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mb-3">
+                            <div class="col-4">
+                                <h5>Favorite Framework</h5>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group-text">
+                                    <input type="checkbox" name="framework" value="Django" class="mr-1">Django
+                                    <input type="checkbox" name="framework" value=".NET" class="ml-3 mr-1">.NET
+                                    <input type="checkbox" name="framework" value="MEAN" class="ml-3 mr-1">MEAN
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mb-1">
+                            <div class="col">
+                                <h5>How many hours a week can you devote to coding?</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start">
+                            <div class="col-10 h6">
+                                <div class="input-group-text">
+                                    <input type="radio" name="hours" value="an unsure amount of" checked
+                                        class="ml-3 mr-1">Unsure<br>
+                                    <input type="radio" name="hours" value="40" class="ml-4 mr-1">40<br>
+                                    <input type="radio" name="hours" value="50-60" class="ml-4 mr-1">50-60<br>
+                                    <input type="radio" name="hours" value="70-80" class="ml-4 mr-1">70-80<br>
+                                    <input type="radio" name="hours" value="90-100" class="ml-4 mr-1">90 +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mt-3">
+                            <div class="col">
+                                <h5>Comment (optional)</h5>
+                                <textarea name="comment" id="" cols="58" rows="4" class="rounded"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mb-5">
+                            <input type="submit" value="Submit" class="btn btn-primary pl-5 pr-5 btn-lg mt-4">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
